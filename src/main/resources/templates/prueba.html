@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gestión de Productos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+          --bg:#080b10;--surface:#0f1318;--card:#151b24;--border:#1e2a38;
+          --accent:#00c8ff;--green:#00e5a0;--orange:#ff9f43;--red:#ff4757;
+          --text:#dce8f5;--muted:#5a7a9a;
+          --font:'Oxanium',sans-serif;--mono:'DM Mono',monospace;
+        }
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;padding:0 0 60px;}
+        body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 80% 10%,rgba(0,200,255,.06) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 10% 80%,rgba(0,229,160,.04) 0%,transparent 50%);pointer-events:none;z-index:0;}
+
+        header{position:relative;z-index:1;border-bottom:1px solid var(--border);background:rgba(15,19,24,.95);backdrop-filter:blur(12px);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+        .logo{font-size:1.4rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);}
+        .logo span{color:var(--text);}
+
+        /* ── SELECTOR DE IDIOMA ── */
+        .lang-section{display:flex;align-items:center;gap:10px;}
+        .lang-label{font-family:var(--mono);font-size:.7rem;color:var(--muted);}
+        .lang-selector{display:flex;gap:0;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+        .lang-btn{background:transparent;border:none;color:var(--muted);cursor:pointer;font-family:var(--mono);font-size:.75rem;font-weight:700;padding:7px 16px;transition:all .2s;letter-spacing:.04em;}
+        .lang-btn:not(:last-child){border-right:1px solid var(--border);}
+        .lang-btn.active{background:var(--accent);color:var(--bg);}
+        .lang-btn:not(.active):hover{background:rgba(255,255,255,.05);color:var(--text);}
+
+        /* ── indicador idioma activo ── */
+        .lang-indicator{font-family:var(--mono);font-size:.68rem;color:var(--muted);background:var(--card);border:1px solid var(--border);padding:4px 10px;border-radius:6px;}
+        .lang-indicator span{color:var(--accent);font-weight:700;}
+
+        main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:340px 1fr;gap:24px;align-items:start;}
+
+        .forms-col{display:flex;flex-direction:column;gap:16px;}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;animation:slideIn .3s ease both;}
+        @keyframes slideIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+
+        .card-head{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--border);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+        .dot{width:8px;height:8px;border-radius:50%;}
+        .dot-blue{background:var(--accent);box-shadow:0 0 8px var(--accent);}
+        .dot-green{background:var(--green);box-shadow:0 0 8px var(--green);}
+        .dot-orange{background:var(--orange);box-shadow:0 0 8px var(--orange);}
+        .dot-red{background:var(--red);box-shadow:0 0 8px var(--red);}
+
+        .card-body{padding:16px;display:flex;flex-direction:column;gap:11px;}
+        .field{display:flex;flex-direction:column;gap:4px;}
+        .field label{font-size:.67rem;color:var(--muted);font-family:var(--mono);letter-spacing:.03em;}
+        .field label .ann{color:#7c6fff;font-size:.61rem;margin-left:4px;}
+        .field input{background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:var(--mono);font-size:.8rem;padding:8px 11px;outline:none;transition:border-color .2s,box-shadow .2s;}
+        .field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,200,255,.08);}
+
+        .btn{width:100%;padding:10px;border:none;border-radius:9px;cursor:pointer;font-family:var(--font);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:all .2s;}
+        .btn:hover{filter:brightness(1.1);transform:translateY(-1px);}
+        .btn:active{transform:none;}
+        .btn-blue{background:var(--accent);color:var(--bg);}
+        .btn-green{background:var(--green);color:var(--bg);}
+        .btn-orange{background:var(--orange);color:var(--bg);}
+        .btn-red{background:var(--red);color:#fff;}
+
+        .method-tag{font-family:var(--mono);font-size:.6rem;font-weight:600;padding:1px 6px;border-radius:4px;margin-left:auto;}
+        .tag-get{background:rgba(0,229,160,.12);color:var(--green);}
+        .tag-post{background:rgba(0,200,255,.12);color:var(--accent);}
+        .tag-put{background:rgba(255,159,67,.12);color:var(--orange);}
+        .tag-delete{background:rgba(255,71,87,.12);color:var(--red);}
+
+        .data-col{display:flex;flex-direction:column;gap:16px;}
+        .table-wrap{overflow-x:auto;}
+        table{width:100%;border-collapse:collapse;font-size:.8rem;}
+        thead tr{background:var(--surface);border-bottom:2px solid var(--border);}
+        th{padding:10px 14px;text-align:left;font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;}
+        tbody tr{border-bottom:1px solid var(--border);transition:background .15s;}
+        tbody tr:hover{background:rgba(0,200,255,.03);}
+        td{padding:9px 14px;}
+        td .id-chip{background:rgba(0,200,255,.1);color:var(--accent);border-radius:4px;padding:2px 7px;font-family:var(--mono);font-size:.7rem;}
+        .empty-row td{text-align:center;padding:28px;color:var(--muted);font-family:var(--mono);font-size:.76rem;}
+
+        .resp-card .card-body{padding:0;}
+        .resp-head{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;font-size:.67rem;font-family:var(--mono);color:var(--muted);}
+        .status-pill{font-size:.67rem;font-family:var(--mono);font-weight:700;padding:2px 9px;border-radius:20px;display:none;}
+        .pill-ok{background:rgba(0,229,160,.15);color:var(--green);display:inline-block;}
+        .pill-err{background:rgba(255,71,87,.15);color:var(--red);display:inline-block;}
+
+        pre#respuesta{padding:13px 16px;font-family:var(--mono);font-size:.75rem;line-height:1.65;color:var(--text);white-space:pre-wrap;min-height:52px;overflow-x:auto;}
+        .loading{display:flex;align-items:center;gap:8px;padding:13px 16px;color:var(--muted);font-family:var(--mono);font-size:.76rem;}
+        .spinner{width:13px;height:13px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .5s linear infinite;}
+        @keyframes spin{to{transform:rotate(360deg);}}
+
+        /* Toast de idioma */
+        #lang-toast{position:fixed;bottom:24px;right:24px;background:var(--card);border:1px solid var(--accent);border-radius:10px;padding:10px 18px;font-family:var(--mono);font-size:.78rem;color:var(--accent);z-index:999;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;}
+        #lang-toast.show{opacity:1;transform:none;}
+
+        @media(max-width:768px){main{grid-template-columns:1fr;}header{padding:14px 18px;flex-wrap:wrap;}}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">PROD<span>UCTOS</span></div>
+
+    <!-- SELECTOR DE IDIOMA -->
+    <div class="lang-section">
+        <span class="lang-label" id="lbl-idioma">IDIOMA / LANGUAGE</span>
+        <div class="lang-selector">
+            <button class="lang-btn active" id="btn-es" onclick="setLang('es')">🇨🇴 ES</button>
+            <button class="lang-btn"        id="btn-en" onclick="setLang('en')">🇺🇸 EN</button>
+        </div>
+        <div class="lang-indicator">Header: <span id="header-display">Accept-Language: es</span></div>
+    </div>
+</header>
+
+<main>
+    <!-- ══ COLUMNA IZQUIERDA ══ -->
+    <div class="forms-col">
+
+        <!-- CONSULTAR GET @RequestParam -->
+        <div class="card">
+            <div class="card-head">
+                <span class="dot dot-green"></span>
+                <span data-es="Consultar" data-en="Search">Consultar</span>
+                <span class="method-tag tag-get">GET @RequestParam</span>
+            </div>
+            <div class="card-body">
+                <div class="field">
+                    <label><span data-es="categoría" data-en="category">categoría</span> <span class="ann">@RequestParam</span></label>
+                    <input id="q-cat" data-placeholder-es="ej. Electronica (opcional)" data-placeholder-en="e.g. Electronics (optional)" placeholder="ej. Electronica (opcional)"/>
+                </div>
+                <div class="field">
+                    <label>precioMax / maxPrice <span class="ann">@RequestParam</span></label>
+                    <input id="q-max" type="number" data-placeholder-es="ej. 500 (opcional)" data-placeholder-en="e.g. 500 (optional)" placeholder="ej. 500 (opcional)"/>
+                </div>
+                <button class="btn btn-green" onclick="consultar()">
+                    <span data-es="▶ Consultar productos" data-en="▶ Search products">▶ Consultar productos</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- AGREGAR POST @RequestBody -->
+        <div class="card">
+            <div class="card-head">
+                <span class="dot dot-blue"></span>
+                <span data-es="Agregar" data-en="Add">Agregar</span>
+                <span class="method-tag tag-post">POST @RequestBody</span>
+            </div>
+            <div class="card-body">
+                <div class="field">
+                    <label><span data-es="nombre" data-en="name">nombre</span> <span class="ann">@RequestBody</span></label>
+                    <input id="a-nom" data-placeholder-es="ej. Laptop" data-placeholder-en="e.g. Laptop" placeholder="ej. Laptop"/>
+                </div>
+                <div class="field">
+                    <label><span data-es="precio" data-en="price">precio</span> <span class="ann">@RequestBody</span></label>
+                    <input id="a-pre" type="number" step="0.01" placeholder="ej. 1200.00"/>
+                </div>
+                <div class="field">
+                    <label><span data-es="categoría" data-en="category">categoría</span> <span class="ann">@RequestBody</span></label>
+                    <input id="a-cat" data-placeholder-es="ej. Electronica" data-placeholder-en="e.g. Electronics" placeholder="ej. Electronica"/>
+                </div>
+                <button class="btn btn-blue" onclick="agregar()">
+                    <span data-es="＋ Guardar producto" data-en="＋ Save product">＋ Guardar producto</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- MODIFICAR PUT @ModelAttribute -->
+        <div class="card">
+            <div class="card-head">
+                <span class="dot dot-orange"></span>
+                <span data-es="Modificar" data-en="Update">Modificar</span>
+                <span class="method-tag tag-put">PUT @ModelAttribute</span>
+            </div>
+            <div class="card-body">
+                <div class="field">
+                    <label>id <span class="ann">@PathVariable</span></label>
+                    <input id="m-id" type="number" data-placeholder-es="ID del producto" data-placeholder-en="Product ID" placeholder="ID del producto"/>
+                </div>
+                <div class="field">
+                    <label><span data-es="nuevo nombre" data-en="new name">nuevo nombre</span> <span class="ann">@ModelAttribute</span></label>
+                    <input id="m-nom" data-placeholder-es="(opcional)" data-placeholder-en="(optional)" placeholder="(opcional)"/>
+                </div>
+                <div class="field">
+                    <label><span data-es="nuevo precio" data-en="new price">nuevo precio</span> <span class="ann">@ModelAttribute</span></label>
+                    <input id="m-pre" type="number" step="0.01" placeholder="(opcional)"/>
+                </div>
+                <div class="field">
+                    <label><span data-es="nueva categoría" data-en="new category">nueva categoría</span> <span class="ann">@ModelAttribute</span></label>
+                    <input id="m-cat" data-placeholder-es="(opcional)" data-placeholder-en="(optional)" placeholder="(opcional)"/>
+                </div>
+                <button class="btn btn-orange" onclick="modificar()">
+                    <span data-es="✎ Actualizar producto" data-en="✎ Update product">✎ Actualizar producto</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ELIMINAR DELETE @PathVariable -->
+        <div class="card">
+            <div class="card-head">
+                <span class="dot dot-red"></span>
+                <span data-es="Eliminar" data-en="Delete">Eliminar</span>
+                <span class="method-tag tag-delete">DELETE @PathVariable</span>
+            </div>
+            <div class="card-body">
+                <div class="field">
+                    <label>id <span class="ann">@PathVariable</span></label>
+                    <input id="e-id" type="number" data-placeholder-es="ID a eliminar" data-placeholder-en="ID to delete" placeholder="ID a eliminar"/>
+                </div>
+                <button class="btn btn-red" onclick="eliminar()">
+                    <span data-es="✕ Eliminar producto" data-en="✕ Delete product">✕ Eliminar producto</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ══ COLUMNA DERECHA ══ -->
+    <div class="data-col">
+
+        <!-- TABLA -->
+        <div class="card">
+            <div class="card-head">
+                <span class="dot dot-blue"></span>
+                <span data-es="Productos en base de datos" data-en="Products in database">Productos en base de datos</span>
+                <button class="btn btn-green" style="width:auto;padding:4px 14px;font-size:.68rem;margin-left:auto" onclick="consultar()">↺</button>
+            </div>
+            <div class="card-body" style="padding:0">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th data-es="Nombre" data-en="Name">Nombre</th>
+                            <th data-es="Precio" data-en="Price">Precio</th>
+                            <th data-es="Categoría" data-en="Category">Categoría</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tabla-body">
+                        <tr class="empty-row">
+                            <td colspan="4" data-es="Cargando..." data-en="Loading...">Cargando...</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESPUESTA JSON -->
+        <div class="card resp-card">
+            <div class="resp-head">
+                <span data-es="RESPUESTA DEL SERVIDOR" data-en="SERVER RESPONSE">RESPUESTA DEL SERVIDOR</span>
+                <span id="status-pill" class="status-pill"></span>
+            </div>
+            <div class="card-body">
+                <pre id="respuesta">— <span data-es="Esperando petición" data-en="Waiting for request">Esperando petición</span> —</pre>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Toast notificación idioma -->
+<div id="lang-toast"></div>
+
+<script th:inline="javascript">
+    // ══════════════════════════════════════════════
+    //  IDIOMA — se envía en el header Accept-Language
+    //  en CADA petición fetch al controlador
+    // ══════════════════════════════════════════════
+    let currentLang = 'es';
+    const BASE = '/nuevo/productos';
+
+    const TEXTOS = {
+      es: {
+        toast:        '🇨🇴 Idioma cambiado a Español — Header: Accept-Language: es',
+        esperando:    '— Esperando petición —',
+        cargando:     'Cargando...',
+        sinResultados:'No se encontraron productos',
+        errorConexion:'❌ Error de conexión. ¿Spring Boot está corriendo?',
+      },
+      en: {
+        toast:        '🇺🇸 Language changed to English — Header: Accept-Language: en',
+        esperando:    '— Waiting for request —',
+        cargando:     'Loading...',
+        sinResultados:'No products found',
+        errorConexion:'❌ Connection error. Is Spring Boot running?',
+      }
+    };
+
+    // ── Cambiar idioma ──
+    function setLang(lang) {
+      currentLang = lang;
+
+      // Actualizar botones activos
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+      // Mostrar header actual en el indicador
+      document.getElementById('header-display').textContent = 'Accept-Language: ' + lang;
+
+      // Traducir todos los elementos con data-es / data-en
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+
+      // Traducir placeholders
+      document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
+        el.placeholder = el.getAttribute('data-placeholder-' + lang);
+      });
+
+      // Toast de confirmación
+      const toast = document.getElementById('lang-toast');
+      toast.textContent = TEXTOS[lang].toast;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2800);
+
+      // Volver a consultar con el nuevo idioma para ver mensaje traducido
+      consultar();
+    }
+
+    // ── Mostrar respuesta ──
+    function mostrarResp(texto, ok) {
+      const pre  = document.getElementById('respuesta');
+      const pill = document.getElementById('status-pill');
+      try { pre.textContent = JSON.stringify(JSON.parse(texto), null, 2); }
+      catch { pre.textContent = texto; }
+      pill.className = 'status-pill ' + (ok ? 'pill-ok' : 'pill-err');
+      pill.textContent = ok ? '200 OK' : 'ERROR';
+    }
+
+    function cargando() {
+      document.getElementById('respuesta').innerHTML =
+        '<div class="loading"><div class="spinner"></div>' +
+        TEXTOS[currentLang].cargando + '</div>';
+      document.getElementById('status-pill').className = 'status-pill';
+    }
+
+    function actualizarTabla(productos) {
+      const tbody = document.getElementById('tabla-body');
+      if (!productos || productos.length === 0) {
+        tbody.innerHTML = `<tr class="empty-row"><td colspan="4">${TEXTOS[currentLang].sinResultados}</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = productos.map(p => `
+        <tr>
+          <td><span class="id-chip">${p.id}</span></td>
+          <td>${p.nombre}</td>
+          <td>$${parseFloat(p.precio).toFixed(2)}</td>
+          <td>${p.categoria || '—'}</td>
+        </tr>
+      `).join('');
+    }
+
+    // ══════════════════════════════════════════════
+    //  GET — @RequestParam
+    //  Header Accept-Language se envía aquí ↓
+    // ══════════════════════════════════════════════
+    async function consultar() {
+      cargando();
+      const params = new URLSearchParams();
+      const cat = document.getElementById('q-cat').value.trim();
+      const max = document.getElementById('q-max').value.trim();
+      if (cat) params.append('categoria', cat);
+      if (max) params.append('precioMax', max);
+
+      try {
+        const res = await fetch(BASE + (params.toString() ? '?' + params : ''), {
+          method: 'GET',
+          headers: {
+            'Accept-Language': currentLang   // ← header que lee @RequestHeader en Spring
+          }
+        });
+        const text = await res.text();
+        mostrarResp(text, res.ok);
+        const data = JSON.parse(text);
+        if (data.productos) actualizarTabla(data.productos);
+      } catch(e) {
+        document.getElementById('respuesta').textContent = TEXTOS[currentLang].errorConexion;
+      }
+    }
+
+    // ══════════════════════════════════════════════
+    //  POST — @RequestBody (JSON)
+    //  Header Accept-Language se envía aquí ↓
+    // ══════════════════════════════════════════════
+    async function agregar() {
+      cargando();
+      const obj = {};
+      const n = document.getElementById('a-nom').value.trim();
+      const p = document.getElementById('a-pre').value.trim();
+      const c = document.getElementById('a-cat').value.trim();
+      if (n) obj.nombre    = n;
+      if (p) obj.precio    = parseFloat(p);
+      if (c) obj.categoria = c;
+
+      try {
+        const res = await fetch(BASE, {
+          method: 'POST',
+          headers: {
+            'Content-Type':   'application/json',
+            'Accept-Language': currentLang   // ← header que lee @RequestHeader en Spring
+          },
+          body: JSON.stringify(obj)
+        });
+        const text = await res.text();
+        mostrarResp(text, res.ok);
+        if (res.ok) {
+          ['a-nom','a-pre','a-cat'].forEach(id => document.getElementById(id).value = '');
+          consultar();
+        }
+      } catch(e) {
+        document.getElementById('respuesta').textContent = TEXTOS[currentLang].errorConexion;
+      }
+    }
+
+    // ══════════════════════════════════════════════
+    //  PUT — @ModelAttribute (form-data)
+    //  Header Accept-Language se envía aquí ↓
+    // ══════════════════════════════════════════════
+    async function modificar() {
+      cargando();
+      const id = document.getElementById('m-id').value.trim();
+      if (!id) {
+        document.getElementById('respuesta').textContent =
+          currentLang === 'es' ? '⚠ Ingresa el ID del producto a modificar'
+                                : '⚠ Enter the product ID to update';
+        return;
+      }
+
+      const fd = new FormData();
+      const n = document.getElementById('m-nom').value.trim();
+      const p = document.getElementById('m-pre').value.trim();
+      const c = document.getElementById('m-cat').value.trim();
+      if (n) fd.append('nombre', n);
+      if (p) fd.append('precio', p);
+      if (c) fd.append('categoria', c);
+
+      try {
+        const res = await fetch(BASE + '/' + id, {
+          method: 'PUT',
+          headers: {
+            'Accept-Language': currentLang   // ← header que lee @RequestHeader en Spring
+          },
+          body: fd
+        });
+        const text = await res.text();
+        mostrarResp(text, res.ok);
+        if (res.ok) {
+          ['m-id','m-nom','m-pre','m-cat'].forEach(id => document.getElementById(id).value = '');
+          consultar();
+        }
+      } catch(e) {
+        document.getElementById('respuesta').textContent = TEXTOS[currentLang].errorConexion;
+      }
+    }
+
+    // ══════════════════════════════════════════════
+    //  DELETE — @PathVariable
+    //  Header Accept-Language se envía aquí ↓
+    // ══════════════════════════════════════════════
+    async function eliminar() {
+      cargando();
+      const id = document.getElementById('e-id').value.trim();
+      if (!id) {
+        document.getElementById('respuesta').textContent =
+          currentLang === 'es' ? '⚠ Ingresa el ID del producto a eliminar'
+                                : '⚠ Enter the product ID to delete';
+        return;
+      }
+
+      try {
+        const res = await fetch(BASE + '/' + id, {
+          method: 'DELETE',
+          headers: {
+            'Accept-Language': currentLang   // ← header que lee @RequestHeader en Spring
+          }
+        });
+        const text = await res.text();
+        mostrarResp(text, res.ok);
+        if (res.ok) {
+          document.getElementById('e-id').value = '';
+          consultar();
+        }
+      } catch(e) {
+        document.getElementById('respuesta').textContent = TEXTOS[currentLang].errorConexion;
+      }
+    }
+
+    // Cargar al abrir
+    window.addEventListener('DOMContentLoaded', consultar);
+</script>
+</body>
+</html>
