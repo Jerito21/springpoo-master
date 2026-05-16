@@ -1,10 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title th:text="${status} + ' — Error'">Error</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+          --bg:      #0d1117;
+          --surface: #161b22;
+          --border:  #30363d;
+          --text:    #e6edf3;
+          --muted:   #8b949e;
+          --accent:  #58a6ff;
+          --red:     #f85149;
+          --green:   #3fb950;
+          --orange:  #d29922;
+          --font:    'Oxanium', sans-serif;
+          --mono:    'DM Mono', monospace;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+          background: var(--bg);
+          color: var(--text);
+          font-family: var(--font);
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 40px 20px;
+        }
+
+        /* Octocat animado SVG */
+        .octocat-wrap {
+          margin-bottom: 32px;
+          animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+          0%,100% { transform: translateY(0); }
+          50%      { transform: translateY(-10px); }
+        }
+
+        /* Código de error grande */
+        .error-code {
+          font-size: 8rem;
+          font-weight: 800;
+          line-height: 1;
+          letter-spacing: -.04em;
+          background: linear-gradient(135deg, var(--red) 0%, var(--orange) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin-bottom: 8px;
+        }
+
+        .error-title {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: var(--text);
+          margin-bottom: 10px;
+          text-align: center;
+        }
+
+        .error-desc {
+          font-size: .95rem;
+          color: var(--muted);
+          text-align: center;
+          max-width: 460px;
+          line-height: 1.65;
+          margin-bottom: 32px;
+          font-family: var(--mono);
+        }
+
+        /* Card de detalles técnicos */
+        .error-card {
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 20px 28px;
+          max-width: 520px;
+          width: 100%;
+          margin-bottom: 28px;
+        }
+        .error-card-title {
+          font-size: .7rem;
+          color: var(--muted);
+          font-family: var(--mono);
+          letter-spacing: .1em;
+          text-transform: uppercase;
+          margin-bottom: 14px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid var(--border);
+        }
+        .error-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 7px 0;
+          border-bottom: 1px solid rgba(48,54,61,.5);
+          font-size: .84rem;
+        }
+        .error-row:last-child { border-bottom: none; }
+        .error-row .key   { color: var(--muted); font-family: var(--mono); font-size: .78rem; }
+        .error-row .value { color: var(--text);  font-family: var(--mono); font-size: .78rem; }
+        .pill-status {
+          padding: 2px 10px; border-radius: 20px;
+          font-size: .72rem; font-weight: 700; font-family: var(--mono);
+        }
+        .pill-4xx { background: rgba(248,81,73,.15); color: var(--red); }
+        .pill-5xx { background: rgba(210,153,34,.15); color: var(--orange); }
+        .pill-ok  { background: rgba(63,185,80,.15);  color: var(--green); }
+
+        /* Botones */
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .btn {
+          display: inline-flex; align-items: center; gap: 6px;
+          padding: 9px 20px; border-radius: 8px; border: none;
+          cursor: pointer; font-family: var(--font);
+          font-size: .84rem; font-weight: 600;
+          text-decoration: none; transition: all .2s;
+        }
+        .btn-primary { background: var(--accent); color: var(--bg); }
+        .btn-secondary {
+          background: transparent; color: var(--text);
+          border: 1px solid var(--border);
+        }
+        .btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+        /* Footer */
+        footer {
+          margin-top: 48px;
+          font-family: var(--mono);
+          font-size: .72rem;
+          color: var(--muted);
+          text-align: center;
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+    </style>
 </head>
 <body>
-$END$
+
+<!-- Octocat SVG estilo GitHub -->
+<div class="octocat-wrap">
+    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="58" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+        <!-- cara -->
+        <ellipse cx="60" cy="58" rx="28" ry="26" fill="#8b949e"/>
+        <!-- orejas -->
+        <ellipse cx="36" cy="38" rx="8" ry="10" fill="#8b949e"/>
+        <ellipse cx="84" cy="38" rx="8" ry="10" fill="#8b949e"/>
+        <ellipse cx="36" cy="38" rx="5" ry="7" fill="#0d1117"/>
+        <ellipse cx="84" cy="38" rx="5" ry="7" fill="#0d1117"/>
+        <!-- ojos -->
+        <circle cx="50" cy="54" r="5" fill="#0d1117"/>
+        <circle cx="70" cy="54" r="5" fill="#0d1117"/>
+        <circle cx="52" cy="52" r="1.5" fill="white"/>
+        <circle cx="72" cy="52" r="1.5" fill="white"/>
+        <!-- nariz -->
+        <ellipse cx="60" cy="63" rx="4" ry="2.5" fill="#0d1117"/>
+        <!-- boca triste para errores -->
+        <path d="M52 72 Q60 68 68 72" stroke="#0d1117" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <!-- tentáculos -->
+        <path d="M32 80 Q20 90 22 105" stroke="#8b949e" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M45 86 Q38 100 35 112" stroke="#8b949e" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M75 86 Q82 100 85 112" stroke="#8b949e" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M88 80 Q100 90 98 105" stroke="#8b949e" stroke-width="4" stroke-linecap="round" fill="none"/>
+    </svg>
+</div>
+
+<!-- Código de error -->
+<div class="error-code" th:text="${status}">404</div>
+
+<!-- Título del error -->
+<div class="error-title" th:text="${error}">Page Not Found</div>
+
+<!-- Descripción -->
+<div class="error-desc" th:text="${message}">
+    Lo que buscas no está aquí o fue eliminado.
+</div>
+
+<!-- Card con detalles técnicos -->
+<div class="error-card">
+    <div class="error-card-title">Detalles del error / Error details</div>
+
+    <div class="error-row">
+        <span class="key">status</span>
+        <span class="value">
+        <span class="pill-status"
+              th:classappend="${status >= 500} ? 'pill-5xx' : 'pill-4xx'"
+              th:text="${status}">404</span>
+      </span>
+    </div>
+
+    <div class="error-row">
+        <span class="key">error</span>
+        <span class="value" th:text="${error}">Not Found</span>
+    </div>
+
+    <div class="error-row">
+        <span class="key">path</span>
+        <span class="value" th:text="${path}">/ruta-no-encontrada</span>
+    </div>
+
+    <div class="error-row">
+        <span class="key">timestamp</span>
+        <span class="value" th:text="${timestamp}">—</span>
+    </div>
+
+    <div class="error-row" th:if="${message}">
+        <span class="key">message</span>
+        <span class="value" th:text="${message}">—</span>
+    </div>
+</div>
+
+<!-- Botones de acción -->
+<div class="btn-group">
+    <a href="/nuevo/prueba" class="btn btn-primary">← Volver al inicio</a>
+    <a href="javascript:history.back()" class="btn btn-secondary">↩ Página anterior</a>
+</div>
+
+<footer>
+    <p>SpringPoo · NuevoController ·
+        <a th:href="@{/nuevo/productos}">Ver productos</a>
+    </p>
+</footer>
+
 </body>
 </html>

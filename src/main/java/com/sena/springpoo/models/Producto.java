@@ -23,13 +23,27 @@ public class Producto {
     @Column(length = 80)
     private String categoria;
 
+    // ── RELACIÓN: muchos productos pertenecen a un usuario ──
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id")  // 👈 columna que se crea en la tabla productos
+    private Usuario usuario;
+
     // ── Constructores ──
     public Producto() {}
 
+    // Constructor sin usuario (para cuando no se asigna)
     public Producto(String nombre, Double precio, String categoria) {
         this.nombre    = nombre;
         this.precio    = precio;
         this.categoria = categoria;
+    }
+
+    // Constructor con usuario (para el JOIN)
+    public Producto(String nombre, Double precio, String categoria, Usuario usuario) {
+        this.nombre    = nombre;
+        this.precio    = precio;
+        this.categoria = categoria;
+        this.usuario   = usuario;
     }
 
     // ── Getters y Setters ──
@@ -44,4 +58,8 @@ public class Producto {
 
     public String getCategoria()                 { return categoria; }
     public void   setCategoria(String categoria) { this.categoria = categoria; }
+
+    // ── Getter y Setter del usuario ──
+    public Usuario getUsuario()                  { return usuario; }
+    public void    setUsuario(Usuario usuario)   { this.usuario = usuario; }
 }

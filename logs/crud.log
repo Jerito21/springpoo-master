@@ -1,0 +1,149 @@
+2026-05-15 07:40:29 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — Vista solicitada: /nuevo/prueba
+2026-05-15 07:40:30 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 07:40:30 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 07:40:30 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 07:40:30 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 10 productos encontrados
+2026-05-15 07:40:42 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=ropa | nombre=null
+2026-05-15 07:40:42 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — INNER JOIN filtrado por categoria=ropa
+2026-05-15 07:40:42 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 1 registros
+2026-05-15 07:41:56 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=tecnologia | nombre=null
+2026-05-15 07:41:56 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — INNER JOIN filtrado por categoria=tecnologia
+2026-05-15 07:41:56 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 1 registros
+2026-05-15 09:18:53 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 09:18:53 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 09:18:53 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 10 productos encontrados
+2026-05-15 09:19:00 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 09:19:00 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 09:19:00 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 10 productos encontrados
+2026-05-15 10:06:16 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — Vista solicitada: /nuevo/prueba
+2026-05-15 10:06:16 [INFO ] [http-nio-8080-exec-8] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:06:16 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:06:16 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:06:16 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 10 productos encontrados
+2026-05-15 10:06:33 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=camisa sena | precio=4323.0 | categoria=ropa
+2026-05-15 10:06:34 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=23 | nombre=camisa sena
+2026-05-15 10:06:34 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:06:34 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:06:34 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 10:06:34 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 10:06:34 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 11 productos encontrados
+2026-05-15 10:06:34 [INFO ] [http-nio-8080-exec-9] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:06:34 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 3 registros
+2026-05-15 10:08:18 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — Vista solicitada: /nuevo/prueba
+2026-05-15 10:08:19 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:08:19 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:08:19 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:08:19 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 11 productos encontrados
+2026-05-15 10:08:44 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=camisaaaaaa | precio=3.2323223E7 | categoria=ropa
+2026-05-15 10:08:44 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=24 | nombre=camisaaaaaa
+2026-05-15 10:08:44 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:08:44 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:08:44 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:08:44 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 10:08:44 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 10:08:44 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 12 productos encontrados
+2026-05-15 10:08:44 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 4 registros
+2026-05-15 10:09:45 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=camisaaa | precio=342334.0 | categoria=ropa
+2026-05-15 10:09:45 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=25 | nombre=camisaaa
+2026-05-15 10:09:45 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:09:45 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:09:45 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 10:09:45 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:09:45 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 10:09:45 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 13 productos encontrados
+2026-05-15 10:09:45 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 5 registros
+2026-05-15 10:31:10 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — Vista solicitada: /nuevo/prueba
+2026-05-15 10:31:10 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:31:10 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:31:10 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:31:10 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 13 productos encontrados
+2026-05-15 10:31:35 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=camisaa | precio=43.0 | categoria=Ropa
+2026-05-15 10:31:35 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=26 | nombre=camisaa
+2026-05-15 10:31:37 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:31:37 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:31:37 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:31:37 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 10:31:37 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 10:31:37 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 14 productos encontrados
+2026-05-15 10:31:37 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 6 registros
+2026-05-15 10:31:37 [ERROR] [reactor-http-nio-2] com.sena.springpoo.controller.NuevoController — ❌ Error notificando N8N — producto id=26 | err=404 Not Found from POST https://jeronimogil.app.n8n.cloud/webhook/Archivos
+2026-05-15 10:33:04 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=camisjsd | precio=432423.0 | categoria=si
+2026-05-15 10:33:04 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=27 | nombre=camisjsd
+2026-05-15 10:33:04 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:33:04 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 10:33:04 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:33:04 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:33:04 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 10:33:04 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 7 registros
+2026-05-15 10:33:04 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 15 productos encontrados
+2026-05-15 10:33:04 [ERROR] [reactor-http-nio-2] com.sena.springpoo.controller.NuevoController — ❌ Error notificando N8N — producto id=27 | err=404 Not Found from POST https://jeronimogil.app.n8n.cloud/webhook/Archivos
+2026-05-15 10:41:24 [INFO ] [http-nio-8080-exec-8] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=sskdjskd | precio=4343.0 | categoria=ropa
+2026-05-15 10:41:24 [INFO ] [http-nio-8080-exec-8] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=28 | nombre=sskdjskd
+2026-05-15 10:41:24 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:41:24 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:41:24 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:41:24 [INFO ] [http-nio-8080-exec-9] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 10:41:24 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 10:41:24 [INFO ] [http-nio-8080-exec-9] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 8 registros
+2026-05-15 10:41:24 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 16 productos encontrados
+2026-05-15 10:41:25 [ERROR] [reactor-http-nio-5] com.sena.springpoo.controller.NuevoController — ❌ Error notificando N8N — producto id=28 | err=404 Not Found from POST https://jeronimogil.app.n8n.cloud/webhook/Archivos
+2026-05-15 10:51:36 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=camisa sena | precio=3232.0 | categoria=Ropa
+2026-05-15 10:51:36 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=29 | nombre=camisa sena
+2026-05-15 10:51:36 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:51:36 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:51:36 [INFO ] [http-nio-8080-exec-8] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 10:51:36 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 10:51:36 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:51:36 [INFO ] [http-nio-8080-exec-8] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 9 registros
+2026-05-15 10:51:36 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 17 productos encontrados
+2026-05-15 10:51:37 [INFO ] [reactor-http-nio-8] com.sena.springpoo.controller.NuevoController — ✅ N8N notificado — producto id=29 | resp={"message":"Workflow was started"}
+2026-05-15 10:54:10 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=Camisa | precio=32332.0 | categoria=Ropa
+2026-05-15 10:54:10 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=30 | nombre=Camisa
+2026-05-15 10:54:10 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 10:54:10 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 10:54:10 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 10:54:10 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 10:54:10 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 10:54:10 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 10 registros
+2026-05-15 10:54:10 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 18 productos encontrados
+2026-05-15 10:54:10 [INFO ] [reactor-http-nio-8] com.sena.springpoo.controller.NuevoController — ✅ N8N notificado — producto id=30 | resp={"message":"Workflow was started"}
+2026-05-15 11:01:00 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=cris | precio=32.0 | categoria=ropa
+2026-05-15 11:01:00 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=31 | nombre=cris
+2026-05-15 11:01:00 [INFO ] [http-nio-8080-exec-9] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 11:01:00 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 11:01:00 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 11:01:00 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 11:01:00 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 11:01:00 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 11 registros
+2026-05-15 11:01:00 [INFO ] [http-nio-8080-exec-9] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 19 productos encontrados
+2026-05-15 11:01:01 [INFO ] [reactor-http-nio-11] com.sena.springpoo.controller.NuevoController — ✅ N8N notificado — producto id=31 | resp={"message":"Workflow was started"}
+2026-05-15 11:04:13 [INFO ] [http-nio-8080-exec-8] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=Camisa senaaa | precio=3232.0 | categoria=Ropa
+2026-05-15 11:04:13 [INFO ] [http-nio-8080-exec-8] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=32 | nombre=Camisa senaaa
+2026-05-15 11:04:13 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 11:04:13 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 11:04:13 [INFO ] [http-nio-8080-exec-4] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 11:04:13 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 11:04:13 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 11:04:13 [INFO ] [http-nio-8080-exec-10] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 12 registros
+2026-05-15 11:04:13 [INFO ] [http-nio-8080-exec-7] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 20 productos encontrados
+2026-05-15 11:04:13 [INFO ] [reactor-http-nio-11] com.sena.springpoo.controller.NuevoController — ✅ N8N notificado — producto id=32 | resp={"message":"Workflow was started"}
+2026-05-15 11:18:15 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=Cristian | precio=34.0 | categoria=ropa
+2026-05-15 11:18:16 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=33 | nombre=Cristian
+2026-05-15 11:18:16 [INFO ] [http-nio-8080-exec-8] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 11:18:16 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 11:18:16 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 11:18:16 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 11:18:16 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 11:18:16 [INFO ] [http-nio-8080-exec-6] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 12 registros
+2026-05-15 11:18:16 [INFO ] [http-nio-8080-exec-3] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 21 productos encontrados
+2026-05-15 11:18:17 [INFO ] [reactor-http-nio-14] com.sena.springpoo.controller.NuevoController — ✅ N8N notificado — producto id=33 | resp={"message":"Workflow was started"}
+2026-05-15 11:25:39 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos | nombre=cristian | precio=1.0 | categoria=Tecnologia
+2026-05-15 11:25:40 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.controller.NuevoController — POST /nuevo/productos exitoso — producto creado | id=34 | nombre=cristian
+2026-05-15 11:25:40 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos | categoria=null | precioMax=null
+2026-05-15 11:25:40 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — Sin filtros — consultando todos los productos
+2026-05-15 11:25:40 [INFO ] [http-nio-8080-exec-9] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios
+2026-05-15 11:25:40 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos | categoria=null | nombre=null
+2026-05-15 11:25:40 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — INNER JOIN sin filtros
+2026-05-15 11:25:40 [INFO ] [http-nio-8080-exec-5] com.sena.springpoo.controller.NuevoController — GET /nuevo/usuarios-productos exitoso — 12 registros
+2026-05-15 11:25:40 [INFO ] [http-nio-8080-exec-2] com.sena.springpoo.controller.NuevoController — GET /nuevo/productos exitoso — 22 productos encontrados
+2026-05-15 11:25:46 [INFO ] [reactor-http-nio-1] com.sena.springpoo.controller.NuevoController — ✅ N8N notificado — producto id=34 | resp={"message":"Workflow was started"}
