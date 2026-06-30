@@ -11,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +19,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.sql.SQLException;
 import java.util.*;
 
 
 /**
  * ╔══════════════════════════════════════════════════════════════╗
- *  NuevoController — SENA Store
+ *  NuevoController — SENA Store  (migrado a Spring JDBC)
  * ╠══════════════════════════════════════════════════════════════╣
  *  GET    /nuevo/productos      @RequestParam
  *  POST   /nuevo/productos      @RequestBody
@@ -43,11 +41,14 @@ import java.util.*;
  */
 @Controller
 @CrossOrigin(origins = "*")
-public class NuevoController {
+public class
+
+NuevoController {
 
     // ── Logger ────────────────────────────────────────────────────
     private static final Logger log = LogManager.getLogger(NuevoController.class);
 
+    // ── Repositorios JDBC (ya no son interfaces JPA, son clases concretas) ──
     @Autowired
     private ProductoRepository productoRepository;
 
@@ -81,13 +82,13 @@ public class NuevoController {
 
         // Armar payload para n8n
         Map<String, Object> payload = new LinkedHashMap<>();
-        payload.put("correoDestino",    CORREO_DESTINO);
-        payload.put("asunto",           asunto);
-        payload.put("mensaje",          mensaje);
-        payload.put("productoId",       producto.getId());
-        payload.put("productoNombre",   producto.getNombre());
-        payload.put("productoPrecio",   producto.getPrecio());
-        payload.put("productoCategoria",producto.getCategoria());
+        payload.put("correoDestino",     CORREO_DESTINO);
+        payload.put("asunto",            asunto);
+        payload.put("mensaje",           mensaje);
+        payload.put("productoId",        producto.getId());
+        payload.put("productoNombre",    producto.getNombre());
+        payload.put("productoPrecio",    producto.getPrecio());
+        payload.put("productoCategoria", producto.getCategoria());
 
         try {
             WebClient.create()
@@ -117,13 +118,13 @@ public class NuevoController {
     }
 
     // ──────────────────────────────────────────────────────────────
-    //  DTO interno
+    //  DTOs internos (sin cambios)
     // ──────────────────────────────────────────────────────────────
     static class ProductoRequest {
         private String nombre;
         private Double precio;
         private String categoria;
-        private Long   usuarioId;   // 👈 para asignar al usuario en el INNER JOIN
+        private Long   usuarioId;
 
         public ProductoRequest() {}
         public String getNombre()            { return nombre; }
@@ -136,7 +137,6 @@ public class NuevoController {
         public void   setUsuarioId(Long uid) { this.usuarioId = uid; }
     }
 
-    // ── DTO para crear usuario ──
     static class UsuarioRequest {
         private String nombre;
         private String tipoDocumento;
@@ -144,29 +144,27 @@ public class NuevoController {
         private String telefono;
 
         public UsuarioRequest() {}
-        public String getNombre()                          { return nombre; }
-        public void   setNombre(String n)                  { this.nombre = n; }
-        public String getTipoDocumento()                   { return tipoDocumento; }
-        public void   setTipoDocumento(String t)           { this.tipoDocumento = t; }
-        public String getDocumento()                       { return documento; }
-        public void   setDocumento(String d)               { this.documento = d; }
-        public String getTelefono()                        { return telefono; }
-        public void   setTelefono(String tel)              { this.telefono = tel; }
+        public String getNombre()                { return nombre; }
+        public void   setNombre(String n)        { this.nombre = n; }
+        public String getTipoDocumento()         { return tipoDocumento; }
+        public void   setTipoDocumento(String t) { this.tipoDocumento = t; }
+        public String getDocumento()             { return documento; }
+        public void   setDocumento(String d)     { this.documento = d; }
+        public String getTelefono()              { return telefono; }
+        public void   setTelefono(String tel)    { this.telefono = tel; }
     }
 
     // ──────────────────────────────────────────────────────────────
-    //  Utilidad: idioma desde header Accept-Language
+    //  Utilidades: idioma, error body, error500
     // ──────────────────────────────────────────────────────────────
     private String idioma(String lang) {
         return (lang != null && lang.toLowerCase().startsWith("en")) ? "en" : "es";
     }
+
     private String msg(String es, String en, String lang) {
         return "en".equals(lang) ? en : es;
     }
 
-    // ──────────────────────────────────────────────────────────────
-    //  Utilidad: construir respuesta de error estándar
-    // ──────────────────────────────────────────────────────────────
     private Map<String, Object> errorBody(HttpStatus status, String mensaje, String detalle) {
         Map<String, Object> err = new LinkedHashMap<>();
         err.put("timestamp", new Date().toString());
@@ -178,7 +176,7 @@ public class NuevoController {
     }
 
     // ──────────────────────────────────────────────────────────────
-    //  Utilidad: detectar si el error es de conexión a MySQL
+    //  Detección de error de base de datos (MySQL apagado)
     // ──────────────────────────────────────────────────────────────
     private boolean esErrorDeBaseDeDatos(Exception e) {
         Throwable causa = e;
@@ -186,23 +184,21 @@ public class NuevoController {
             String msg = causa.getMessage();
             if (msg != null && (
                     msg.contains("Communications link failure") ||
-                            msg.contains("Connection refused")         ||
-                            msg.contains("Unable to acquire JDBC")     ||
-                            msg.contains("could not prepare statement")||
-                            msg.contains("Unable to open JDBC")        ||
-                            msg.contains("No connection available")    ||
-                            msg.contains("Connection is closed")       ||
-                            causa instanceof SQLException              ||
-                            causa instanceof java.net.ConnectException
+                    msg.contains("Connection refused")          ||
+                    msg.contains("Unable to acquire JDBC")      ||
+                    msg.contains("could not prepare statement") ||
+                    msg.contains("Unable to open JDBC")         ||
+                    msg.contains("No connection available")     ||
+                    msg.contains("Connection is closed")        ||
+                    causa instanceof java.sql.SQLException       ||
+                    causa instanceof java.net.ConnectException
             )) return true;
             causa = causa.getCause();
         }
-        return e instanceof DataAccessException;
+        // Con JDBC, los errores de acceso a datos se envuelven en DataAccessException
+        return e instanceof org.springframework.dao.DataAccessException;
     }
 
-    // ──────────────────────────────────────────────────────────────
-    //  Utilidad: armar respuesta 500
-    // ──────────────────────────────────────────────────────────────
     private ResponseEntity<Map<String, Object>> error500(Exception e, String idioma) {
         if (esErrorDeBaseDeDatos(e)) {
             log.error("❌ Base de datos no disponible — {}", e.getMessage());
@@ -223,8 +219,7 @@ public class NuevoController {
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(errorBody(
                         HttpStatus.INTERNAL_SERVER_ERROR,
-                        msg("Error interno del servidor",
-                                "Internal server error", idioma),
+                        msg("Error interno del servidor", "Internal server error", idioma),
                         e.getMessage() != null ? e.getMessage() : "Unknown error"
                 ));
     }
@@ -277,7 +272,7 @@ public class NuevoController {
     @GetMapping("/nuevo/productos")
     public ResponseEntity<Map<String, Object>> consultar(
             @RequestParam(value = "categoria", required = false) String categoria,
-            @RequestParam(value = "precioMax", required = false) Double precioMax,
+            @RequestParam(value = "precioMax",  required = false) Double precioMax,
             @RequestHeader(value = "Accept-Language", defaultValue = "es") String lang) {
 
         String idioma = idioma(lang);
@@ -356,9 +351,9 @@ public class NuevoController {
         try {
             Producto nuevo = new Producto(body.getNombre(), body.getPrecio(), body.getCategoria());
 
-            // ── Asignar usuario si viene usuarioId ──
+            // ── Asignar usuarioId directamente (ya no se busca el objeto Usuario) ──
             if (body.getUsuarioId() != null) {
-                usuarioRepository.findById(body.getUsuarioId()).ifPresent(nuevo::setUsuario);
+                nuevo.setUsuarioId(body.getUsuarioId());
             }
 
             Producto guardado = productoRepository.save(nuevo);
@@ -408,7 +403,7 @@ public class NuevoController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
                         .body(errorBody(HttpStatus.NOT_FOUND,
                                 msg("Producto no encontrado con ID: " + id,
-                                        "Product not found with ID: "    + id, idioma),
+                                        "Product not found with ID: " + id, idioma),
                                 msg("Verifica el ID e intenta de nuevo",
                                         "Check the ID and try again", idioma)));
             }
@@ -463,7 +458,7 @@ public class NuevoController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
                         .body(errorBody(HttpStatus.NOT_FOUND,
                                 msg("No se encontró el producto con ID: " + id,
-                                        "Product not found with ID: "         + id, idioma),
+                                        "Product not found with ID: " + id, idioma),
                                 msg("Verifica el ID e intenta de nuevo",
                                         "Check the ID and try again", idioma)));
             }
@@ -485,6 +480,7 @@ public class NuevoController {
             return error500(e, idioma);
         }
     }
+
     // ══════════════════════════════════════════════════════════════
     //  GET /nuevo/usuarios — lista todos los usuarios
     // ══════════════════════════════════════════════════════════════
@@ -547,9 +543,9 @@ public class NuevoController {
     }
 
     // ══════════════════════════════════════════════════════════════
-//  GET /nuevo/usuarios-productos — INNER JOIN con DTO
-//  200 OK  |  500 BD apagada
-// ══════════════════════════════════════════════════════════════
+    //  GET /nuevo/usuarios-productos — INNER JOIN con DTO
+    //  200 OK  |  500 BD apagada
+    // ══════════════════════════════════════════════════════════════
     @ResponseBody
     @GetMapping("/nuevo/usuarios-productos")
     public ResponseEntity<Map<String, Object>> consultarUsuariosConProductos(

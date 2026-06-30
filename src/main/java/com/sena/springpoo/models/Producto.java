@@ -1,49 +1,31 @@
 package com.sena.springpoo.models;
 
-import jakarta.persistence.*;
-
 /**
- * Entidad JPA — se mapea a la tabla 'productos' en MySQL.
- * Hibernate la crea automáticamente gracias a ddl-auto=update.
+ * POJO — tabla 'productos' en MySQL.
+ * Sin anotaciones JPA: el mapeo se hace manualmente en ProductoRepository con JdbcTemplate.
  */
-@Entity
-@Table(name = "productos")
 public class Producto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(nullable = false, length = 100)
+    private Long   id;
     private String nombre;
-
-    @Column(nullable = false)
     private Double precio;
-
-    @Column(length = 80)
     private String categoria;
-
-    // ── RELACIÓN: muchos productos pertenecen a un usuario ──
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id")  // 👈 columna que se crea en la tabla productos
-    private Usuario usuario;
+    private Long   usuarioId; // FK hacia la tabla usuarios
 
     // ── Constructores ──
     public Producto() {}
 
-    // Constructor sin usuario (para cuando no se asigna)
     public Producto(String nombre, Double precio, String categoria) {
         this.nombre    = nombre;
         this.precio    = precio;
         this.categoria = categoria;
     }
 
-    // Constructor con usuario (para el JOIN)
-    public Producto(String nombre, Double precio, String categoria, Usuario usuario) {
+    public Producto(String nombre, Double precio, String categoria, Long usuarioId) {
         this.nombre    = nombre;
         this.precio    = precio;
         this.categoria = categoria;
-        this.usuario   = usuario;
+        this.usuarioId = usuarioId;
     }
 
     // ── Getters y Setters ──
@@ -59,7 +41,6 @@ public class Producto {
     public String getCategoria()                 { return categoria; }
     public void   setCategoria(String categoria) { this.categoria = categoria; }
 
-    // ── Getter y Setter del usuario ──
-    public Usuario getUsuario()                  { return usuario; }
-    public void    setUsuario(Usuario usuario)   { this.usuario = usuario; }
+    public Long   getUsuarioId()                 { return usuarioId; }
+    public void   setUsuarioId(Long usuarioId)   { this.usuarioId = usuarioId; }
 }

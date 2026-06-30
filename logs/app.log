@@ -1,209 +1,142 @@
-2026-05-15 07:40:14 [INFO ] [main] com.sena.springpoo.SpringpooApplication — Starting SpringpooApplication using Java 25.0.2 with PID 25012 (C:\Users\Jeronimo Gil\Downloads\springpoo-master\springpoo-master\target\classes started by Jeronimo Gil in C:\Users\Jeronimo Gil\Downloads\springpoo-master\springpoo-master)
-2026-05-15 07:40:14 [DEBUG] [main] com.sena.springpoo.SpringpooApplication — Running with Spring Boot v4.0.3, Spring v7.0.5
-2026-05-15 07:40:14 [INFO ] [main] com.sena.springpoo.SpringpooApplication — No active profile set, falling back to 1 default profile: "default"
-2026-05-15 07:40:14 [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate — Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-15 07:40:14 [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate — Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
-2026-05-15 07:40:15 [INFO ] [main] org.springframework.boot.tomcat.TomcatWebServer — Tomcat initialized with port 8080 (http)
-2026-05-15 07:40:15 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol — Initializing ProtocolHandler ["http-nio-8080"]
-2026-05-15 07:40:15 [INFO ] [main] org.apache.catalina.core.StandardService — Starting service [Tomcat]
-2026-05-15 07:40:15 [INFO ] [main] org.apache.catalina.core.StandardEngine — Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-05-15 07:40:15 [INFO ] [main] org.springframework.boot.web.context.servlet.WebApplicationContextInitializer — Root WebApplicationContext: initialization completed in 1168 ms
-2026-05-15 07:40:15 [INFO ] [main] org.hibernate.orm.jpa — HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-15 07:40:15 [INFO ] [main] org.hibernate.orm.core — HHH000001: Hibernate ORM core version 7.2.4.Final
-2026-05-15 07:40:16 [INFO ] [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo — No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-15 07:40:16 [INFO ] [main] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Starting...
-2026-05-15 07:40:16 [INFO ] [main] com.zaxxer.hikari.pool.HikariPool — HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29b5e7db
-2026-05-15 07:40:16 [INFO ] [main] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Start completed.
-2026-05-15 07:40:16 [WARN ] [main] org.hibernate.orm.core — HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-2026-05-15 07:40:16 [WARN ] [main] org.hibernate.orm.deprecation — HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-15 07:40:16 [INFO ] [main] org.hibernate.orm.connections.pooling — HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/springpoo?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 5.5.5
-	Default catalog/schema: springpoo/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-05-15 07:40:17 [INFO ] [main] org.hibernate.orm.core — HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-15 07:40:17 [INFO ] [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean — Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-15 07:40:17 [INFO ] [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactories — Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-15 07:40:18 [WARN ] [main] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration — spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-15 07:40:18 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol — Starting ProtocolHandler ["http-nio-8080"]
-2026-05-15 07:40:18 [INFO ] [main] org.springframework.boot.tomcat.TomcatWebServer — Tomcat started on port 8080 (http) with context path '/'
-2026-05-15 07:40:18 [INFO ] [main] com.sena.springpoo.SpringpooApplication — Started SpringpooApplication in 5.115 seconds (process running for 9.102)
-2026-05-15 07:40:18 [INFO ] [main] com.sena.springpoo.SpringpooApplication — ✅ SENA Store iniciada correctamente
-2026-05-15 07:40:29 [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] — Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-15 07:40:29 [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet — Initializing Servlet 'dispatcherServlet'
-2026-05-15 07:40:29 [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet — Completed initialization in 3 ms
-2026-05-15 07:40:29 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🪣 Nuevo bucket creado para IP: 0:0:0:0:0:0:0:1
-2026-05-15 07:40:29 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=9
-2026-05-15 07:40:30 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=8
-2026-05-15 07:40:30 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=7
-2026-05-15 07:40:42 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=8
-2026-05-15 07:41:56 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=9
-2026-05-15 08:59:52 [WARN ] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool — HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m1s714ms313µs200ns).
-2026-05-15 09:18:52 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 09:19:00 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 10:06:16 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=9
-2026-05-15 10:06:16 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=7
-2026-05-15 10:06:16 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=8
-2026-05-15 10:06:33 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 10:06:34 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=7
-2026-05-15 10:06:34 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=6
-2026-05-15 10:06:34 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=5
-2026-05-15 10:07:42 [INFO ] [SpringApplicationShutdownHook] org.springframework.boot.tomcat.GracefulShutdown — Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-15 10:07:42 [INFO ] [tomcat-shutdown] org.springframework.boot.tomcat.GracefulShutdown — Graceful shutdown complete
-2026-05-15 10:07:42 [INFO ] [SpringApplicationShutdownHook] com.sena.springpoo.SpringpooApplication — 🛑 SENA Store cerrada correctamente
-2026-05-15 10:07:42 [INFO ] [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean — Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-15 10:07:42 [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Shutdown initiated...
-2026-05-15 10:07:42 [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Shutdown completed.
-2026-05-15 10:07:58 [INFO ] [main] com.sena.springpoo.SpringpooApplication — Starting SpringpooApplication using Java 25.0.2 with PID 24728 (C:\Users\Jeronimo Gil\Downloads\springpoo-master\springpoo-master\target\classes started by Jeronimo Gil in C:\Users\Jeronimo Gil\Downloads\springpoo-master\springpoo-master)
-2026-05-15 10:07:58 [DEBUG] [main] com.sena.springpoo.SpringpooApplication — Running with Spring Boot v4.0.3, Spring v7.0.5
-2026-05-15 10:07:58 [INFO ] [main] com.sena.springpoo.SpringpooApplication — No active profile set, falling back to 1 default profile: "default"
-2026-05-15 10:07:59 [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate — Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-15 10:07:59 [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate — Finished Spring Data repository scanning in 191 ms. Found 3 JPA repository interfaces.
-2026-05-15 10:07:59 [INFO ] [main] org.springframework.boot.tomcat.TomcatWebServer — Tomcat initialized with port 8080 (http)
-2026-05-15 10:07:59 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol — Initializing ProtocolHandler ["http-nio-8080"]
-2026-05-15 10:07:59 [INFO ] [main] org.apache.catalina.core.StandardService — Starting service [Tomcat]
-2026-05-15 10:07:59 [INFO ] [main] org.apache.catalina.core.StandardEngine — Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-05-15 10:07:59 [INFO ] [main] org.springframework.boot.web.context.servlet.WebApplicationContextInitializer — Root WebApplicationContext: initialization completed in 1803 ms
-2026-05-15 10:08:00 [INFO ] [main] org.hibernate.orm.jpa — HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-15 10:08:00 [INFO ] [main] org.hibernate.orm.core — HHH000001: Hibernate ORM core version 7.2.4.Final
-2026-05-15 10:08:00 [INFO ] [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo — No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-15 10:08:00 [INFO ] [main] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Starting...
-2026-05-15 10:08:00 [INFO ] [main] com.zaxxer.hikari.pool.HikariPool — HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10f397d0
-2026-05-15 10:08:00 [INFO ] [main] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Start completed.
-2026-05-15 10:08:00 [WARN ] [main] org.hibernate.orm.core — HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-2026-05-15 10:08:00 [WARN ] [main] org.hibernate.orm.deprecation — HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-15 10:08:00 [INFO ] [main] org.hibernate.orm.connections.pooling — HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/springpoo?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 5.5.5
-	Default catalog/schema: springpoo/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-05-15 10:08:01 [INFO ] [main] org.hibernate.orm.core — HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-15 10:08:02 [INFO ] [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean — Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-15 10:08:02 [INFO ] [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactories — Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-15 10:08:03 [WARN ] [main] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration — spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-15 10:08:03 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol — Starting ProtocolHandler ["http-nio-8080"]
-2026-05-15 10:08:03 [INFO ] [main] org.springframework.boot.tomcat.TomcatWebServer — Tomcat started on port 8080 (http) with context path '/'
-2026-05-15 10:08:03 [INFO ] [main] com.sena.springpoo.SpringpooApplication — Started SpringpooApplication in 5.776 seconds (process running for 7.029)
-2026-05-15 10:08:03 [INFO ] [main] com.sena.springpoo.SpringpooApplication — ✅ SENA Store iniciada correctamente
-2026-05-15 10:08:18 [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] — Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-15 10:08:18 [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet — Initializing Servlet 'dispatcherServlet'
-2026-05-15 10:08:18 [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet — Completed initialization in 0 ms
-2026-05-15 10:08:18 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🪣 Nuevo bucket creado para IP: 0:0:0:0:0:0:0:1
-2026-05-15 10:08:18 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=9
-2026-05-15 10:08:19 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=7
-2026-05-15 10:08:19 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=8
-2026-05-15 10:08:44 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 10:08:44 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 10:08:44 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
-2026-05-15 10:08:44 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=6
-2026-05-15 10:09:45 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 10:09:45 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 10:09:45 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=7
-2026-05-15 10:09:45 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=6
-2026-05-15 10:23:46 [INFO ] [SpringApplicationShutdownHook] org.springframework.boot.tomcat.GracefulShutdown — Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-15 10:23:46 [INFO ] [tomcat-shutdown] org.springframework.boot.tomcat.GracefulShutdown — Graceful shutdown complete
-2026-05-15 10:23:47 [INFO ] [SpringApplicationShutdownHook] com.sena.springpoo.SpringpooApplication — 🛑 SENA Store cerrada correctamente
-2026-05-15 10:23:47 [INFO ] [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean — Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-15 10:23:47 [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Shutdown initiated...
-2026-05-15 10:23:47 [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Shutdown completed.
-2026-05-15 10:30:55 [INFO ] [main] com.sena.springpoo.SpringpooApplication — Starting SpringpooApplication using Java 25.0.2 with PID 23692 (C:\Users\Jeronimo Gil\Downloads\springpoo-master\springpoo-master\target\classes started by Jeronimo Gil in C:\Users\Jeronimo Gil\Downloads\springpoo-master\springpoo-master)
-2026-05-15 10:30:55 [DEBUG] [main] com.sena.springpoo.SpringpooApplication — Running with Spring Boot v4.0.3, Spring v7.0.5
-2026-05-15 10:30:55 [INFO ] [main] com.sena.springpoo.SpringpooApplication — No active profile set, falling back to 1 default profile: "default"
-2026-05-15 10:30:56 [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate — Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-15 10:30:56 [INFO ] [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate — Finished Spring Data repository scanning in 156 ms. Found 4 JPA repository interfaces.
-2026-05-15 10:30:56 [INFO ] [main] org.springframework.boot.tomcat.TomcatWebServer — Tomcat initialized with port 8080 (http)
-2026-05-15 10:30:56 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol — Initializing ProtocolHandler ["http-nio-8080"]
-2026-05-15 10:30:56 [INFO ] [main] org.apache.catalina.core.StandardService — Starting service [Tomcat]
-2026-05-15 10:30:56 [INFO ] [main] org.apache.catalina.core.StandardEngine — Starting Servlet engine: [Apache Tomcat/11.0.18]
-2026-05-15 10:30:56 [INFO ] [main] org.springframework.boot.web.context.servlet.WebApplicationContextInitializer — Root WebApplicationContext: initialization completed in 1376 ms
-2026-05-15 10:30:56 [INFO ] [main] org.hibernate.orm.jpa — HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-05-15 10:30:56 [INFO ] [main] org.hibernate.orm.core — HHH000001: Hibernate ORM core version 7.2.4.Final
-2026-05-15 10:30:57 [INFO ] [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo — No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-15 10:30:57 [INFO ] [main] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Starting...
-2026-05-15 10:30:57 [INFO ] [main] com.zaxxer.hikari.pool.HikariPool — HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5059d398
-2026-05-15 10:30:57 [INFO ] [main] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Start completed.
-2026-05-15 10:30:57 [WARN ] [main] org.hibernate.orm.core — HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-2026-05-15 10:30:57 [WARN ] [main] org.hibernate.orm.deprecation — HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-05-15 10:30:57 [INFO ] [main] org.hibernate.orm.connections.pooling — HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/springpoo?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 5.5.5
-	Default catalog/schema: springpoo/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-05-15 10:30:58 [INFO ] [main] org.hibernate.orm.core — HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-15 10:30:58 [INFO ] [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean — Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-15 10:30:58 [INFO ] [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactories — Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-15 10:30:59 [WARN ] [main] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration — spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-15 10:30:59 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol — Starting ProtocolHandler ["http-nio-8080"]
-2026-05-15 10:30:59 [INFO ] [main] org.springframework.boot.tomcat.TomcatWebServer — Tomcat started on port 8080 (http) with context path '/'
-2026-05-15 10:30:59 [INFO ] [main] com.sena.springpoo.SpringpooApplication — Started SpringpooApplication in 5.102 seconds (process running for 6.053)
-2026-05-15 10:30:59 [INFO ] [main] com.sena.springpoo.SpringpooApplication — ✅ SENA Store iniciada correctamente
-2026-05-15 10:31:10 [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] — Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-15 10:31:10 [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet — Initializing Servlet 'dispatcherServlet'
-2026-05-15 10:31:10 [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet — Completed initialization in 1 ms
-2026-05-15 10:31:10 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🪣 Nuevo bucket creado para IP: 0:0:0:0:0:0:0:1
-2026-05-15 10:31:10 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=9
-2026-05-15 10:31:10 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
-2026-05-15 10:31:10 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 10:31:35 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 10:31:37 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 10:31:37 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
-2026-05-15 10:31:37 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=6
-2026-05-15 10:33:04 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 10:33:04 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 10:33:04 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=7
-2026-05-15 10:33:04 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=6
-2026-05-15 10:41:24 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 10:41:24 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 10:41:24 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=6
-2026-05-15 10:41:24 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=7
-2026-05-15 10:51:35 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 10:51:36 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 10:51:36 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
-2026-05-15 10:51:36 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=6
-2026-05-15 10:54:10 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 10:54:10 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=8
-2026-05-15 10:54:10 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
-2026-05-15 10:54:10 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=6
-2026-05-15 11:01:00 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 11:01:00 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 11:01:00 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
-2026-05-15 11:01:00 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=6
-2026-05-15 11:04:13 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 11:04:13 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 11:04:13 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
-2026-05-15 11:04:13 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=6
-2026-05-15 11:18:15 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 11:18:16 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 11:18:16 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=7
-2026-05-15 11:18:16 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=6
-2026-05-15 11:25:39 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
-2026-05-15 11:25:40 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
-2026-05-15 11:25:40 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
-2026-05-15 11:25:40 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=6
-2026-05-15 11:40:20 [INFO ] [SpringApplicationShutdownHook] org.springframework.boot.tomcat.GracefulShutdown — Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-15 11:40:20 [INFO ] [tomcat-shutdown] org.springframework.boot.tomcat.GracefulShutdown — Graceful shutdown complete
-2026-05-15 11:40:22 [INFO ] [SpringApplicationShutdownHook] com.sena.springpoo.SpringpooApplication — 🛑 SENA Store cerrada correctamente
-2026-05-15 11:40:22 [INFO ] [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean — Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-15 11:40:22 [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Shutdown initiated...
-2026-05-15 11:40:22 [INFO ] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Shutdown completed.
+2026-06-19 07:30:20 [INFO ] [main] com.sena.springpoo.SpringpooApplication — Starting SpringpooApplication using Java 25.0.2 with PID 13172 (C:\Users\Jeronimo Gil\Downloads\springpoo-master\springpoo-master\target\classes started by Jeronimo Gil in C:\Users\Jeronimo Gil\Downloads\springpoo-master\springpoo-master)
+2026-06-19 07:30:20 [DEBUG] [main] com.sena.springpoo.SpringpooApplication — Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-06-19 07:30:20 [INFO ] [main] com.sena.springpoo.SpringpooApplication — No active profile set, falling back to 1 default profile: "default"
+2026-06-19 07:30:23 [INFO ] [main] org.springframework.boot.tomcat.TomcatWebServer — Tomcat initialized with port 8080 (http)
+2026-06-19 07:30:23 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol — Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-19 07:30:23 [INFO ] [main] org.apache.catalina.core.StandardService — Starting service [Tomcat]
+2026-06-19 07:30:23 [INFO ] [main] org.apache.catalina.core.StandardEngine — Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-06-19 07:30:23 [INFO ] [main] org.springframework.boot.web.context.servlet.WebApplicationContextInitializer — Root WebApplicationContext: initialization completed in 2691 ms
+2026-06-19 07:30:23 [INFO ] [main] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Starting...
+2026-06-19 07:30:24 [INFO ] [main] com.zaxxer.hikari.pool.HikariPool — HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@580902cd
+2026-06-19 07:30:24 [INFO ] [main] com.zaxxer.hikari.HikariDataSource — HikariPool-1 - Start completed.
+2026-06-19 07:30:25 [INFO ] [main] org.apache.coyote.http11.Http11NioProtocol — Starting ProtocolHandler ["http-nio-8080"]
+2026-06-19 07:30:25 [INFO ] [main] org.springframework.boot.tomcat.TomcatWebServer — Tomcat started on port 8080 (http) with context path '/'
+2026-06-19 07:30:25 [INFO ] [main] com.sena.springpoo.SpringpooApplication — Started SpringpooApplication in 5.311 seconds (process running for 14.544)
+2026-06-19 07:30:25 [INFO ] [main] com.sena.springpoo.SpringpooApplication — ✅ SENA Store iniciada correctamente
+2026-06-19 07:30:48 [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] — Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-19 07:30:48 [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet — Initializing Servlet 'dispatcherServlet'
+2026-06-19 07:30:48 [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet — Completed initialization in 4 ms
+2026-06-19 07:30:48 [INFO ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🪣 Nuevo bucket creado para IP: 0:0:0:0:0:0:0:1
+2026-06-19 07:30:48 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=9
+2026-06-19 07:30:49 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
+2026-06-19 07:30:49 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
+2026-06-19 08:32:32 [WARN ] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool — HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m8s136ms350µs900ns).
+2026-06-19 09:08:03 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=9
+2026-06-19 09:08:04 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
+2026-06-19 09:08:04 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
+2026-06-19 09:10:14 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
+2026-06-19 09:10:18 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
+2026-06-19 09:10:18 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
+2026-06-19 09:10:18 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=6
+2026-06-19 09:10:44 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=9
+2026-06-19 09:10:44 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=8
+2026-06-19 09:10:44 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=7
+2026-06-19 09:10:44 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=6
+2026-06-19 09:10:44 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=4
+2026-06-19 09:10:44 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=5
+2026-06-19 09:10:44 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=3
+2026-06-19 09:10:44 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=2
+2026-06-19 09:10:44 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=1
+2026-06-19 09:10:45 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=0
+2026-06-19 09:10:45 [WARN ] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:10:45 [WARN ] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:10:45 [WARN ] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:45 [WARN ] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:45 [WARN ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:45 [WARN ] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:47 [WARN ] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:47 [WARN ] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:47 [WARN ] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:47 [WARN ] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:47 [WARN ] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:47 [WARN ] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | método=GET
+2026-06-19 09:10:53 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=0
+2026-06-19 09:10:53 [WARN ] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:10:53 [WARN ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:11:46 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=8
+2026-06-19 09:11:46 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | tokens restantes=7
+2026-06-19 09:11:46 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=6
+2026-06-19 09:11:57 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=7
+2026-06-19 09:17:35 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos/1 | tokens restantes=9
+2026-06-19 09:17:35 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
+2026-06-19 09:21:14 [WARN ] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@722613e6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:18 [WARN ] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@736d646a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:19 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
+2026-06-19 09:21:19 [WARN ] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@a493c30 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:19 [WARN ] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6d538e9 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:19 [WARN ] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@790cbf8d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:19 [WARN ] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@64d9247e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:19 [WARN ] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@27b23c69 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:19 [WARN ] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@80f4a06 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:19 [WARN ] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@14636c5d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:19 [WARN ] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3934507b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 09:21:19 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
+2026-06-19 09:21:19 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=7
+2026-06-19 09:21:19 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=6
+2026-06-19 09:21:19 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=5
+2026-06-19 09:21:20 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=4
+2026-06-19 09:21:49 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
+2026-06-19 09:21:49 [DEBUG] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=7
+2026-06-19 09:21:49 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=6
+2026-06-19 09:21:49 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=5
+2026-06-19 09:21:49 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=4
+2026-06-19 09:21:50 [DEBUG] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=3
+2026-06-19 09:22:00 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=2
+2026-06-19 09:22:00 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=0
+2026-06-19 09:22:00 [DEBUG] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=3
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [DEBUG] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=1
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=POST
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-4] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-8] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-7] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | método=GET
+2026-06-19 09:22:00 [WARN ] [http-nio-8080-exec-2] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:07 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba1 | tokens restantes=1
+2026-06-19 09:22:18 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/prueba | tokens restantes=1
+2026-06-19 09:22:18 [WARN ] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — 🚫 Rate limit SUPERADO | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios | método=GET
+2026-06-19 09:22:18 [DEBUG] [http-nio-8080-exec-1] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=0
+2026-06-19 09:25:02 [DEBUG] [http-nio-8080-exec-10] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos/2 | tokens restantes=9
+2026-06-19 09:25:02 [DEBUG] [http-nio-8080-exec-5] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=8
+2026-06-19 09:25:19 [DEBUG] [http-nio-8080-exec-3] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos/17 | tokens restantes=9
+2026-06-19 09:38:29 [DEBUG] [http-nio-8080-exec-9] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/productos | tokens restantes=9
+2026-06-19 09:40:25 [DEBUG] [http-nio-8080-exec-6] com.sena.springpoo.filter.RateLimitFilter — ✅ Rate limit OK | IP=0:0:0:0:0:0:0:1 | URI=/nuevo/usuarios-productos | tokens restantes=9
+2026-06-19 10:01:39 [WARN ] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3e756f11 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 10:01:41 [WARN ] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@30dcf4de (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 10:01:55 [WARN ] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@49c35cdb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 10:02:06 [WARN ] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@655b5b38 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-19 10:02:41 [WARN ] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase — HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@61808e58 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.

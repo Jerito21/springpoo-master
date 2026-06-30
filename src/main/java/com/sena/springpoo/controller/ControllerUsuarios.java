@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class ControllerUsuarios {
 
+    // UsuarioRepository ahora es una clase concreta JDBC, no una interfaz JPA
     @Autowired
     UsuarioRepository usuarioRepository;
 
